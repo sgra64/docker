@@ -9,11 +9,16 @@ Content:
 5. [Basic Docker Commands]( #5-basic-docker-commands)
 6. [References](            #6-references)
 
-Try sample docker projects:
+[Install](https://docs.docker.com/engine/install) and try Docker:
 
-- branch [[nginx](https://github.com/sgra64/docker/tree/nginx)]
-    for small personal web-site from [*nginx*](https://hub.docker.com/_/nginx)
-    image
+- Run the [Hello World](https://github.com/docker-library/hello-world/tree/master/i386/hello-world)
+    container built on the [scratch](https://hub.docker.com/_/scratch) image.
+    See [hello.c](https://github.com/docker-library/hello-world)
+    for the source code of the hello binary included in this image.
+
+- Branch [[nginx](https://github.com/sgra64/docker/tree/nginx)]
+    shows a small personal web-site project using the
+    [*nginx*](https://hub.docker.com/_/nginx) image.
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -21,8 +26,8 @@ Try sample docker projects:
 
 ## 1. Docker
 
-`Docker` is a widely used software packaging, distribution and execution infrastructure
-using containers:
+[Docker](https://docs.docker.com/get-started/overview/#docker-architecture) is a widely
+used software packaging, distribution and execution infrastructure using containers:
 
 - First introduction of Docker by: *Salomon Hykes* at PyCon 2013, Santa Clara CA:
   *"The Future of Linux Containers"*
@@ -32,7 +37,7 @@ using containers:
   On Windows, Docker runs on Linux in an internal Hyper-V virtual machine.
 
 - Docker has a
-  [Client/Server-Architecture](https://docs.docker.com/get-started/overview/#docker-architecture)
+  [Client/Server-Architecture](https://www.geeksforgeeks.org/client-server-model)
   with:
   - server-side *Docker Engine*, which is a Linux process: *dockerd*.
     Permanent Unix processes/services are often called *daemons*.
@@ -63,11 +68,11 @@ using containers:
 Docker builds on Unix/Linux technologies:
 
 - **Stackable filesystem images** that provide a compounded view (union) at
-  each layer of files and directories of underlying images
-  ([union filesystem](https://medium.com/@knoldus/unionfs-a-file-system-of-a-container-2136cd11a779)).
+  each layer of files and directories of underlying images,
+  see: *Union Filesystem* [UnionFS](https://medium.com/@knoldus/unionfs-a-file-system-of-a-container-2136cd11a779).
 
 - **Containers with a group of processes** that run in full isolation of processes
-  running in other containers/process groups (Linux
+  running in other containers/process groups (such as *Linux*
   [LXC](https://linuxcontainers.org/) or similar technologies).
 
 Dockerized applications run as processes in containers
@@ -149,7 +154,7 @@ basic concepts and steps:
 ## 3. Docker Images
 
 Docker uses stacked images (or image layers) of the
-[union filesystem](https://medium.com/@knoldus/unionfs-a-file-system-of-a-container-2136cd11a779)
+[UnionFS](https://medium.com/@knoldus/unionfs-a-file-system-of-a-container-2136cd11a779)
 to create a view processes see with directories and files comprised from the
 *union* of files and directories from all underlying images.
 
