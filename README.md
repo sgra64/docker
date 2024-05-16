@@ -17,8 +17,8 @@ Content:
     for the source code of the hello binary included in this image.
 
 - Branch [[nginx](https://github.com/sgra64/docker/tree/nginx)]
-    shows a small personal web-site project using the
-    [*nginx*](https://hub.docker.com/_/nginx) image.
+    shows a small personal web-site project using the image of the
+    [*nginx*](https://hub.docker.com/_/nginx) HTTP-server (web-server).
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
