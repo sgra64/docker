@@ -85,7 +85,7 @@ drwxr-xr-x 1     0 May 16 20:51 .git/
 Next, the *Java-build project* is pulled inside the project directory:
 
 ```sh
-git clone git@gitlab.bht-berlin.de:sgraupner/setup.se2.git A1-java-build
+git clone https://gitlab.bht-berlin.de/sgraupner/setup.se2.git A1-java-build
 ```
 
 Content of Docker *build project* directory:
