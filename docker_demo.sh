@@ -22,6 +22,9 @@ docker start hello-world
 # create & run new container instance 
 docker run hello-world
 
+# create & run alpine container and keep shell process open
+docker run -it --rm --name helloworld alpine ash -c "echo helloworld ; sh"
+
 # create and run Ubuntu container (Ubuntu is a Linux distribution)
 docker pull ubuntu:latest
 docker image ls ubuntu
