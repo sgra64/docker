@@ -11,10 +11,37 @@ Content:
 
 [Install](https://docs.docker.com/engine/install) and try Docker:
 
-- Run the [Hello World](https://github.com/docker-library/hello-world/tree/master/i386/hello-world)
-    container built on the [scratch](https://hub.docker.com/_/scratch) image.
+- Run the [Hello World](https://hub.docker.com/_/hello-world) container:
+
+    ```sh
+    # pull hello-world image, create and run container
+    docker run hello-world
+    ```
+
+    and compare the
+    [output](https://github.com/sgra64/docker/blob/markup/main/hello-world-container-output.txt).
+
+- [Build](https://docs.docker.com/reference/cli/docker/image/build) the image for the
+    [Hello World](https://hub.docker.com/_/hello-world) container based on the
+    [scratch](https://hub.docker.com/_/scratch) image and the
+    [Dockerfile](https://github.com/docker-library/hello-world/tree/master/i386/hello-world).
     See [hello.c](https://github.com/docker-library/hello-world)
     for the source code of the hello binary included in this image.
+
+    ```sh
+    git clone https://github.com/docker-library/hello-world
+    
+    cd hello-world/i386/hello-world
+    
+    # build image using Dockerfile in current directory: '.'
+    docker build -t my-hello-world-img .
+
+    #create and run transient (--rm) container from image
+    docker run --rm --name hello-world-container my-hello-world-img
+
+    # remove image
+    docker image rm my-hello-world-img
+    ```
 
 - Branch [[nginx](https://github.com/sgra64/docker/tree/nginx)]
     shows a small personal web-site project using the image of the
