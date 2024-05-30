@@ -1,0 +1,22 @@
+version: '3'
+name: freerider
+services:
+
+  # database for the freerider reservation system
+  mysqld:
+    build: .
+    image: freerider-mysqld-img:1.0
+    volumes:
+      - mysqld-vol:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ROOT_PASSWORD:
+      # created via 'init_freerider_access.sql':
+      # MYSQL_DATABASE: "FREERIDER_DB"
+      # MYSQL_USER: "freerider"
+      # MYSQL_PASSWORD: "free.ride"
+    ports:
+      - 3306:3306
+
+volumes:
+  mysqld-vol:
