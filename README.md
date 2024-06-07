@@ -275,7 +275,7 @@ Only system databases are shown, there is no other database yet:
 User and access information can be queried in the `mysql` table:
 
 ```sh
-mysql> select * from mysql;
+mysql> select host, user from mysql.user;
 ```
 ```
 +-----------+------------------+
